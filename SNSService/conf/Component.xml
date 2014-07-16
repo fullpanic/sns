@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<component xmlns="http://www.restlet.org/schemas/2.0/Component"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.restlet.org/schemas/2.0/Component">
+
+	<client protocols="HTTP" name="http client" />
+	<server protocols="HTTP" name="http server" port="8182"/>
+
+	<defaultHost defaultMatchingMode="1">
+		<!-- user api -->
+		<attach uriPattern="/regist" targetClass="com.sns.resource.user.UserRegist" />
+		<attach uriPattern="/login" targetClass="com.sns.resource.user.UserLogin" />
+	</defaultHost>
+
+</component>
