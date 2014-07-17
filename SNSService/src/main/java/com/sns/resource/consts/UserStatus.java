@@ -5,17 +5,18 @@ package com.sns.resource.consts;
  * @author fullpanic
  *
  */
-public class UserStatus {
+public enum UserStatus {
     
-    //deleted
-    public static final int DELETED = -1;
+    DELETED(-1), NEWADDED(0), NORMAL(1), DISABLE(2);
     
-    //normal
-    public static final int ENABLE = 1;
+    int code;
     
-    //new registed
-    public static final int NEW = 2;
+    UserStatus(int c) {
+        this.code = c;
+    }
     
-    //disabled
-    public static final int DISABLED = 4;
+    @Override
+    public String toString() {
+        return String.valueOf(this.code);
+    }
 }

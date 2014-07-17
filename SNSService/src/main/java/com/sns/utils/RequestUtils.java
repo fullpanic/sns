@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.restlet.data.Form;
 
 import com.sns.resource.SNSException;
+import com.sns.resource.consts.AppConsts;
 
 /**
  * request params parser
@@ -11,6 +12,7 @@ import com.sns.resource.SNSException;
  *
  */
 public class RequestUtils {
+    
     /**
      * get param value by key
      * @param request request Reference 
@@ -29,5 +31,13 @@ public class RequestUtils {
             throw new SNSException(key + " is illegal!");
         }
         return rs;
+    }
+    
+    /**
+     * @param uid
+     * @return
+     */
+    public static boolean validateUid(String uid) {
+        return StringUtils.isNotEmpty(uid) ? uid.matches(AppConsts.UID_PATTERN) : false;
     }
 }

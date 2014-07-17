@@ -11,7 +11,7 @@ public class ConnectionPoolTest {
     
     @Before
     public void init() {
-        ConnectionPool.init("/Datasource.properties");
+        ConnectionPool.init("/conf/Datasource.properties");
     }
     
     @Test

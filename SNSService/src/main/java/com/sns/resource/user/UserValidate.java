@@ -24,24 +24,24 @@ import com.sns.utils.RequestUtils;
 import com.sns.utils.TokenUtils;
 
 /**
- * user login
+ * user validate by captcha
  * @author fullpanic
  *
  */
-public class UserLogin extends ServerResource {
-    private static Logger logger = LoggerFactory.getLogger(UserLogin.class);
+public class UserValidate extends ServerResource {
+    private static Logger logger = LoggerFactory.getLogger(UserValidate.class);
     
     @Post
     @Get
-    public Representation regist() {
+    public Representation validate() {
         RespData data = new RespData();
         String errmsg = null;
         Status status = Status.SUCCESS_OK;
         try {
             Form form = getQuery();
             //get userinfo
-            String uid = RequestUtils.get(form, UserKeys.USERNAME);
-            String pwd = RequestUtils.get(form, UserKeys.PASSWORD);
+            String uid = RequestUtils.get(form, UserKeys.UID);
+            String pwd = RequestUtils.get(form, UserKeys.CAPTCHA);
             //check and auth
             String token = auth(uid, pwd);
             if (StringUtils.isEmpty(token)) {

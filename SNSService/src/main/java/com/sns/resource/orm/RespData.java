@@ -55,6 +55,9 @@ public class RespData {
     }
     
     public void setErrMsg(String errMsg) {
+        if (StringUtils.isNotEmpty(errMsg)) {
+            clear();
+        }
         this.errMsg = errMsg;
     }
     
@@ -64,6 +67,10 @@ public class RespData {
             this.msg = new JSONObject();
         }
         this.msg.put(key, value);
+    }
+    
+    public void clear() {
+        this.msg = null;
     }
     
     /**

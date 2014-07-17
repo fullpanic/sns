@@ -8,8 +8,9 @@
 
 	<defaultHost defaultMatchingMode="1">
 		<!-- user api -->
-		<attach uriPattern="/regist" targetClass="com.sns.resource.user.UserRegist" />
-		<attach uriPattern="/login" targetClass="com.sns.resource.user.UserLogin" />
+		<attach uriPattern="/user/regist" targetClass="com.sns.resource.user.UserRegist" />
+		<attach uriPattern="/user/validate" targetClass="com.sns.resource.user.UserValidate" />
+		<attach uriPattern="/user/login" targetClass="com.sns.resource.user.UserLogin" />
 	</defaultHost>
 
 </component>
